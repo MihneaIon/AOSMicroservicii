@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: warehouse
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Mihnea-PC
+Implementation-Vendor-Id: com.facultate.aos
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/warehouse
+Created-By: Maven Integration for Eclipse
+

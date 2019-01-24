@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="mb-5">New User</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="#" th:action="@{/addBill}" th:object="${billing}" method="post">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="nameOfPerson" class="col-form-label">Name of Person</label>
+                        <input type="text" th:field="*{nameOfPerson}" class="form-control" id="nameOfPerson" placeholder="Name of Person">
+                        <span th:if="${#fields.hasErrors('nameOfPerson')}" th:errors="*{nameOfPerson}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="date" class="col-form-label">Data</label>
+                        <input type="text" th:field="*{date}" class="form-control" id="date" placeholder="Data">
+                        <span th:if="${#fields.hasErrors('date')}" th:errors="*{date}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="placeForDeleavery" class="col-form-label">Deleavery</label>
+                        <input type="text" th:field="*{placeForDeleavery}" class="form-control" id="placeForDeleavery" placeholder="Deleavery">
+                        <span th:if="${#fields.hasErrors('placeForDeleavery')}" th:errors="*{placeForDeleavery}" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary" value="Add product">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

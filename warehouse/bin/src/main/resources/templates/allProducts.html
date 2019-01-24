@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Books</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1> Books </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th> Amount </th>
+                    <th> Product </th>
+                    <th> Region </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${books.empty}">
+                    <td colspan="2"> No Books Available </td>
+                </tr>
+                <tr th:each="product : ${products}">
+                    <td><span th:text="${product.amount}"> Amount </span></td>
+                    <td><span th:text="${product.product}"> Product </span></td>
+                    <td><span th:text="${product.region}"> Region </span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--<div class="col-md-6">-->
+            <!--<a class="btn btn-success" href="#" th:href="@{/books/create}"> Add Books </a>-->
+            <!--<a class="btn btn-primary" href="#" th:href="@{/books/edit}" th:classappend="${books.empty} ? 'disabled' : ''"> Edit Books </a>-->
+        <!--</div>-->
+    </div>
+</div>
+</body>
+</html>
